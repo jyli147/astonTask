@@ -36,8 +36,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) throws URISyntaxException {
         UserDto createdUser = userService.createUser(userDto);
-
-        return ResponseEntity.created(URI.create("/api/v1/user/" + createdUser.getId())).body(createdUser);
+       return ResponseEntity.created(URI.create("/api/v1/user/" + createdUser.getId())).body(createdUser);
     }
 
     @PutMapping("/user/{id}")
